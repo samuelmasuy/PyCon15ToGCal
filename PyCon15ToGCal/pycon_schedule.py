@@ -176,10 +176,6 @@ if __name__ == '__main__':
                         help='Get your client secret from Google developer console.')
     args = parser.parse_args()
 
-    # client_id = '984790132116.apps.googleusercontent.com'
-    # client_secret = 'iVN5lDHFQVOIkm24Peim7ziy'
-
     url = 'https://us.pycon.org/2015/schedule/talks/'
     HTTP = authentification_authorization(args.clientid, args.clientsecret)
-    # calendar_id = 'primary'
     insert_event(url, args.calendar)
