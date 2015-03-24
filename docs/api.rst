@@ -8,3 +8,6 @@ API
 
 .. automodule:: pycon_parser
     :members:
+
+.. automodule:: pycon_pick
+    :members:
