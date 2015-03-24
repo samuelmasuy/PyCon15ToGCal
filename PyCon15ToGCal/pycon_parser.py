@@ -3,7 +3,7 @@
 PyCon Parser
 ------------
 
-Parse the schedule of talks given at PyCon15
+Parse the schedule of talks given at PyCon15.
 
 :copyright: (c) 2015 by Samuel Masuy.
 :license: GNU version 2.0, see LICENSE for more details.
@@ -39,6 +39,7 @@ def parse(url):
 
         for talk_time, row in enumerate(tbody_rows):
             talks = row.getchildren()[1:]
+            # time_slot = []
             for talk_index, talk in enumerate(talks):
                 if 'class' not in talk.attrib:
                     continue
@@ -74,6 +75,8 @@ def parse(url):
                     pycon_events.append(create_event(title, description,
                                                      start_datetime, end_datetime,
                                                      speaker, headers[talk_index]))
+            # if time_slot:
+            #     pycon_events.append(time_slot)
     return pycon_events
 
 
@@ -88,15 +91,15 @@ def get_event_time(date, start_time, end_time):
 
 def convert_to_datetime(date_event, time_event):
     """
-    Convert date and time to isoformat ``datetime.datetime``.
+    Convert date and time ``datetime.datetime``.
 
     :param str date_event: Date of the event. Format: `January 01, 2000`
     :param str time_event: Time of the event. Format: `01:00PM`
-    :return: ``datetime.datetime`` in ISO format.
+    :return: ``datetime.datetime``.
     :rtype: str
     """
     return datetime.strptime(
-        (date_event + time_event), '%B %d, %Y%I:%M%p').isoformat()
+        (date_event + time_event), '%B %d, %Y%I:%M%p')
 
 
 def create_event(title, description, start_datetime, end_datetime,
@@ -106,10 +109,10 @@ def create_event(title, description, start_datetime, end_datetime,
 
     :param str title: Title of the talk.
     :param str description: Description of the talk.
-    :param str start_datetime: Start of the talk, must be a isoformat
-                               representation of ``datetime.datetime``
-    :param str end_datetime: End of the talk, must be a isoformat
-                               representation of ``datetime.datetime``
+    :param str start_datetime: Start of the talk, must of type
+                               ``datetime.datetime``
+    :param str end_datetime: End of the talk, must of type
+                               ``datetime.datetime``
     :param str speaker: The speaker who is giving the talk.
     :param track: Room in which the talk is given.
     :return: An event.
