@@ -19,7 +19,6 @@ use `pip install -r requirements.txt` to install the required modules.
 
 ```bash
     usage: pycon_schedule.py [-h] [-c CALENDAR] clientid clientsecret
-
     Port PyCon talks and keynotes to Google calendar.
 
     positional arguments:
@@ -32,6 +31,8 @@ use `pip install -r requirements.txt` to install the required modules.
                        Name of the secondary calendar you would like to port
                        the event to. If you would like it to be your primary
                        calendar, insert `primary`. (Default: `PyCon15`)
+      -a, --all        Add all the events to your google calendar. The
+                       default is a walkthough. (Pick one talk per session.)
 ```
 
 ## Contribute

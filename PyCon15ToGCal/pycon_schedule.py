@@ -124,7 +124,7 @@ def insert_event(http, url, name_of_calendar, add_all=False):
     :return: A tuple containing the calendar ID, and the event ID that
              were just created.
     """
-    # service = create_service(http)
+    service = create_service(http)
 
     events = parse(url)
 
@@ -134,18 +134,18 @@ def insert_event(http, url, name_of_calendar, add_all=False):
     pp = pprint.PrettyPrinter(indent=4)
     pp.pprint(events)
 
-    # gcal_events = to_gcal(events)
+    gcal_events = to_gcal(events)
 
-    # calendar_id = cal_lookup_id(service, name_of_calendar)
+    calendar_id = cal_lookup_id(service, name_of_calendar)
 
-    # if calendar_id is None:
-    #     calendar_id = insert_calendar(service, name_of_calendar)
-    # # Create all the events and get their ids.
-    # created_events_id = [service.events().insert(calendarId=calendar_id,
-    #                                              body=event).execute()['id']
-    #                      for event in gcal_events]
+    if calendar_id is None:
+        calendar_id = insert_calendar(service, name_of_calendar)
+    # Create all the events and get their ids.
+    created_events_id = [service.events().insert(calendarId=calendar_id,
+                                                 body=event).execute()['id']
+                         for event in gcal_events]
 
-    # return calendar_id, created_events_id
+    return calendar_id, created_events_id
 
 
 def to_gcal(events):
