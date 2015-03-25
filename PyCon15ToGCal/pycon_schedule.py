@@ -195,5 +195,7 @@ if __name__ == '__main__':
 
     url = 'https://us.pycon.org/2015/schedule/talks/'
     http = authentication_authorization(args.clientid, args.clientsecret)
-    http = None
-    insert_event(http, url, args.calendar, add_all=args.add_all)
+    calendar_id, _ = insert_event(http, url, args.calendar, add_all=args.add_all)
+    print "\n==========================================================\n"
+    print "All the events have been added to: {0}".format(calendar_id)
+    print "You can check you calendar at: https://www.google.com/calendar/render"
