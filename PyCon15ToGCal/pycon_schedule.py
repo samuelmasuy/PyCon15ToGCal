@@ -7,6 +7,7 @@ Command line application to port PyCon talks and keynotes events to
 Google calendar.
 
 .. code::
+
     usage: pycon_schedule.py [-h] [-c CALENDAR] [-a] clientid clientsecret
 
     Port PyCon talks and keynotes to Google calendar.
