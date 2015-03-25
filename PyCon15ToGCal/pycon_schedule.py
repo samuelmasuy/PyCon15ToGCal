@@ -46,15 +46,15 @@ def create_service(http):
     """
     Create a Google calendar service using API V3.
 
-    :param http: *Authentification and Authorization* for Google calendar.
+    :param http: *Authentication and Authorization* for Google calendar.
     :return: A Resource object with methods for interacting with the service.
     :note: Takes ``HTTP`` as a global variable, it is generated at runtime
-           using :func:`authentification_authorization`.
+           using :func:`authentication_authorization`.
     """
     return build(serviceName='calendar', version='v3', http=http)
 
 
-def authentification_authorization(client_id, client_secret):
+def authentication_authorization(client_id, client_secret):
     """
     Allow the application to authenticate itself as an application belonging
     to Google Developers Console project.
@@ -114,9 +114,9 @@ def insert_event(http, url, name_of_calendar, add_all=False):
     """
     Insert events in the user calendar
     This function will create a secondary calendar if ``name_of_calendar``
-    does not match any calendar in the user's google calendar.
+    does not match any calendar in the user's Google calendar.
 
-    :param http: *Authentification and Authorization* for Google calendar.
+    :param http: *Authentication and Authorization* for Google calendar.
     :param str url: URL to be parsed.
     :param name_of_calendar: The name of the calendar in which events
                              should be inserted.
@@ -186,11 +186,12 @@ if __name__ == '__main__':
                         help='Get your client secret from Google developer console.')
     parser.add_argument('-a', '--all', dest='add_all', action='store_true',
                         help='Add all the events to your google calendar. The \
-        default is a walkthough. (Pick one talk per session.)')
+        default is a provides an interface to select talks and keynotes. \
+        (Pick one talk per session.)')
     parser.set_defaults(add_all=False)
     args = parser.parse_args()
 
     url = 'https://us.pycon.org/2015/schedule/talks/'
-    # http = authentification_authorization(args.clientid, args.clientsecret)
+    http = authentication_authorization(args.clientid, args.clientsecret)
     http = None
     insert_event(http, url, args.calendar, add_all=args.add_all)
