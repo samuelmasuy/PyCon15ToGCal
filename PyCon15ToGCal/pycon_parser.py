@@ -19,7 +19,7 @@ def parse(url):
     Parse the schedule of PyCon talks.
 
     :param str url: The url of all the events.
-    :return: A list of all pycon talks events.
+    :return: A list of all PyCon talks events.
     """
     tree = make_tree(url)
 
@@ -130,7 +130,7 @@ def make_tree(url):
     """
     Create a lxml tree from a url.
 
-    :param str url: The url of all the events.
+    :param str url: The URL of all the events.
     :return: A ``lxml.tree``
     """
     # response = requests.get(url, verify=False).text
