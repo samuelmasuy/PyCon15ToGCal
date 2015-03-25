@@ -133,8 +133,11 @@ def insert_event(http, url, name_of_calendar, add_all=False):
     if not add_all:
         events = pick_events([list(g) for _, g in itertools.groupby(events,
                                                                     lambda k: k['time_start'])])
-    pp = pprint.PrettyPrinter(indent=4)
-    pp.pprint(events)
+    # pp = pprint.PrettyPrinter(indent=4)
+    # pp.pprint(events)
+
+    print "\n===================================================="
+    print "Please wait while we upload the events to calendar..."
 
     gcal_events = to_gcal(events)
 
@@ -196,6 +199,6 @@ if __name__ == '__main__':
     url = 'https://us.pycon.org/2015/schedule/talks/'
     http = authentication_authorization(args.clientid, args.clientsecret)
     calendar_id, _ = insert_event(http, url, args.calendar, add_all=args.add_all)
-    print "\n==========================================================\n"
+    print "\n====================================================\n"
     print "All the events have been added to: {0}".format(calendar_id)
     print "You can check you calendar at: https://www.google.com/calendar/render"
