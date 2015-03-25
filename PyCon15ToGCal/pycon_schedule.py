@@ -23,7 +23,7 @@ Google calendar.
                        the event to. If you would like it to be your primary
                        calendar, insert `primary`. (Default: `PyCon15`)
       -a, --all        Add all the events to your google calendar. The
-                       default is a provides an interface to select talks and
+                       default is to provide an interface to select talks and
                        keynotes. (Pick one talk per session.)
 
 :copyright: (c) 2015 by Samuel Masuy.
@@ -188,7 +188,7 @@ if __name__ == '__main__':
                         help='Get your client secret from Google developer console.')
     parser.add_argument('-a', '--all', dest='add_all', action='store_true',
                         help='Add all the events to your google calendar. The \
-        default is a provides an interface to select talks and keynotes. \
+        default is to provide an interface to select talks and keynotes. \
         (Pick one talk per session.)')
     parser.set_defaults(add_all=False)
     args = parser.parse_args()

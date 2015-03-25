@@ -33,7 +33,7 @@ use `pip install -r requirements.txt` to install the required modules.
                        the event to. If you would like it to be your primary
                        calendar, insert `primary`. (Default: `PyCon15`)
       -a, --all        Add all the events to your google calendar. The
-                       default is a provides an interface to select talks and
+                       default is to provide an interface to select talks and
                        keynotes. (Pick one talk per session.)
 ```
 
