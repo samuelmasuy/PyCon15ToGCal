@@ -9,10 +9,18 @@ Pick events from the schedule of talks and keynotes given at PyCon15.
 :license: GNU version 2.0, see LICENSE for more details.
 """
 
-import itertools
-
 
 def pick_events(events):
+    """
+    Interface to select PyCon talks and keynotes.
+    This let the user choose an event per time slot.
+    The user can also skip a time slot, if desired.
+
+    :param events: The list of events by time slot in order.
+    :param events: list of lists of dicts.
+    :return: The list of events that the user selected.
+    :rtype: list of dicts.
+    """
     events_picked = []
     date = None
     for time_slot in events:
@@ -41,7 +49,7 @@ def pick_events(events):
             for index, event in enumerate(time_slot, start=1):
                 print u"{0}) {1}".format(index, event_to_str(event))
             while not invalid_user_input:
-                choice = raw_input("Press one of the coresponding talk number to select or 'n' to skip it.  ")
+                choice = raw_input("Press one of the corresponding talk number to select or 'n' to skip it.  ")
                 invalid_user_input = is_choice_valid(
                     choice, ['n', range(1, len(time_slot) + 1)])
             if choice != 'n':
@@ -52,10 +60,26 @@ def pick_events(events):
 
 
 def is_choice_valid(choice, valid_options):
+    """
+    Check if an option is choice is valid give a list of options.
+
+    :param choice: One character or integer.
+    :type choice: int or str
+    :param list valid_options: A list or a list of list containing valid options.
+    :return: Choice is in list.
+    :rtype: bool
+    """
     return choice in (str(v) for subv in valid_options for v in subv)
 
 
 def event_to_str(event):
+    """
+    Create a sentence out of an event.
+
+    :param dict event: A PyCon event, can be a talk or a keynote.
+    :return: A sentence describing the event.
+    :rtype: str
+    """
     title = event['title']
     speaker = event['speaker']
     time_start = event['time_start'].strftime('%I:%M%p')
