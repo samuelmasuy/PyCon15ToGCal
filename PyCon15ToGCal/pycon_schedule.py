@@ -180,10 +180,10 @@ if __name__ == '__main__':
                         help='Name of the secondary calendar you would like to \
         port the event to. If you would like it to be your primary calendar, \
         insert `primary`. (Default: `PyCon15`)')
-    # parser.add_argument('clientid',
-    #                     help='Get your client ID from Google developer console.')
-    # parser.add_argument('clientsecret',
-    #                     help='Get your client secret from Google developer console.')
+    parser.add_argument('clientid',
+                        help='Get your client ID from Google developer console.')
+    parser.add_argument('clientsecret',
+                        help='Get your client secret from Google developer console.')
     parser.add_argument('-a', '--all', dest='add_all', action='store_true',
                         help='Add all the events to your google calendar. The \
         default is a walkthough. (Pick one talk per session.)')
