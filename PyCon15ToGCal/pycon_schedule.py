@@ -7,8 +7,8 @@ Command line application to port PyCon talks and keynotes events to
 Google calendar.
 
 .. code::
+    usage: pycon_schedule.py [-h] [-c CALENDAR] [-a] clientid clientsecret
 
-    usage: pycon_schedule.py [-h] [-c CALENDAR] clientid clientsecret
     Port PyCon talks and keynotes to Google calendar.
 
     positional arguments:
@@ -22,7 +22,8 @@ Google calendar.
                        the event to. If you would like it to be your primary
                        calendar, insert `primary`. (Default: `PyCon15`)
       -a, --all        Add all the events to your google calendar. The
-                       default is a walkthough. (Pick one talk per session.)
+                       default is a provides an interface to select talks and
+                       keynotes. (Pick one talk per session.)
 
 :copyright: (c) 2015 by Samuel Masuy.
 :license: GNU version 2.0, see LICENSE for more details.
