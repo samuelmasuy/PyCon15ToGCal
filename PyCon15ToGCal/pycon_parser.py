@@ -133,7 +133,6 @@ def make_tree(url):
     :param str url: The URL of all the events.
     :return: A ``lxml.tree``
     """
-    # response = requests.get(url, verify=False).text
-    response = requests.get(url).text
+    response = requests.get(url, verify=False).text
     tree = html.fromstring(response)
     return tree
