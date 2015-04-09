@@ -178,7 +178,8 @@ def to_gcal(events):
         gcal.append(entry)
     return gcal
 
-if __name__ == '__main__':
+
+def main():
     parser = argparse.ArgumentParser(
         description='Port PyCon talks and keynotes to Google calendar.')
     parser.add_argument('-c', '--calendar', dest='calendar', default='PyCon15',
@@ -202,3 +203,8 @@ if __name__ == '__main__':
     print "\n===================================================="
     print "All the events have been added to: {0}".format(calendar_id)
     print "You can check you calendar at: https://www.google.com/calendar/render"
+
+
+if __name__ == '__main__':
+    main()
+

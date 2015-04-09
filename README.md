@@ -7,18 +7,21 @@ Google calendar.
 
 ## Installation
 
-You will need to create a [project][gapi] on Google develloper console,
+You will need to create a [project][gapi] on Google developer console,
 with the permission for calendar. The key and secret is necessary for
 this application.
 
 I strongly suggest you to create a [virtualenv][ve] for this project.
-Then, providing you have pip installed on your machine,
-use `pip install -r requirements.txt` to install the required modules.
+
+`pip install --editable .` will provide you with pycon_schedule script.
+
 
 ## Running
 
+Providing you have installed the command line application:
+
 ```bash
-    usage: pycon_schedule.py [-h] [-c CALENDAR] [-a] clientid clientsecret
+    usage: pycon_schedule [-h] [-c CALENDAR] [-a] clientid clientsecret
 
     Port PyCon talks and keynotes to Google calendar.
 

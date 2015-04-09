@@ -21,6 +21,10 @@ setup(
     packages=['PyCon15ToGCal'],
     install_requires=reqs,
     long_description=read('README.md'),
+    entry_points='''
+            [console_scripts]
+            pycon_schedule=PyCon15ToGCal.pycon_schedule:main
+    ''',
     classifiers=[
         "Topic :: Utilities",
         "Development Status :: 4 - Beta",
