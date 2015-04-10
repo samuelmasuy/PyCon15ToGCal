@@ -58,4 +58,4 @@ GNU General Public License version 2.0
 Please refer to [LICENSE](/LICENSE/).
 
 [gapi]: https://developers.google.com/console/
-[ve]: http://www.virtualenv.org/en/latest/virtualenv.html#installation
+[ve]: http://docs.python-guide.org/en/latest/dev/virtualenvs/
