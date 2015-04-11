@@ -183,17 +183,17 @@ def main():
     parser = argparse.ArgumentParser(
         description='Port PyCon talks and keynotes to Google calendar.')
     parser.add_argument('-c', '--calendar', dest='calendar', default='PyCon15',
-                        help='Name of the secondary calendar you would like to \
-        port the event to. If you would like it to be your primary calendar, \
-        insert `primary`. (Default: `PyCon15`)')
+                        help=('Name of the secondary calendar you would like to '
+        'port the event to. If you would like it to be your primary calendar, '
+        'insert `primary`. (Default: `PyCon15`)'))
     parser.add_argument('clientid',
                         help='Get your client ID from Google developer console.')
     parser.add_argument('clientsecret',
                         help='Get your client secret from Google developer console.')
     parser.add_argument('-a', '--all', dest='add_all', action='store_true',
-                        help='Add all the events to your google calendar. The \
-        default is to provide an interface to select talks and keynotes. \
-        (Pick one talk per session.)')
+                        help=('Add all the events to your google calendar. The '
+        'default is to provide an interface to select talks and keynotes. '
+        '(Pick one talk per session.)'))
     parser.set_defaults(add_all=False)
     args = parser.parse_args()
 
@@ -207,4 +207,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
